@@ -22,7 +22,7 @@ on:
         VENDOR:
               description: 'Enter Direct Link Of Your Version Vendor'
               required: true
-              default: 'https://www.lumarray.com/Files/vendor.img'
+              default: 'http://fengz.mooo.com:8080/files/vendor.img'
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -56,8 +56,8 @@ jobs:
       run: |
         cd lpbinary/binary
         wget ${{ github.event.inputs.VENDOR }}
-        wget https://www.lumarray.com/Files/product.img
-        wget https://www.lumarray.com/Files/system_ext.img
+        wget http://fengz.mooo.com:8080/files/product.img
+        wget http://fengz.mooo.com:8080/files/system_ext.img
     - name: Packing
       run: |
         cd lpbinary/binary
